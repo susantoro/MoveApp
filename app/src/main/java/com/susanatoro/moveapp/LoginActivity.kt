@@ -11,6 +11,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        bnIniciarSesion.setOnClickListener {
+            startActivity(Intent(this,NavigationActivity::class.java))
+        }
+
         tvRegistrar.setOnClickListener(){
             startActivity(Intent(this,RegistroActivity::class.java))
             finish()

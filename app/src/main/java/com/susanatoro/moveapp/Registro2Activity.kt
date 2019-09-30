@@ -1,11 +1,14 @@
 package com.susanatoro.moveapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_registro2.*
+import kotlinx.android.synthetic.main.activity_registro3.*
 
 import java.util.ArrayList
 import java.util.HashMap
@@ -35,6 +38,11 @@ class Registro2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro2)
 
+        bnSiguiente.setOnClickListener{
+            startActivity(Intent(this,Registro3Activity::class.java))
+            finish()
+
+        }
         expandableListView = findViewById(R.id.elUsercity)
         if (expandableListView != null) {
             val listData = data

@@ -9,6 +9,15 @@
             android:roundIcon="@mipmap/ic_move_launcher"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".NavigationActivity"
+                android:label="@string/title_activity_navigation"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Registro4Activity">
+        </activity>
+        <activity android:name=".Registro3Activity">
+        </activity>
         <activity android:name=".Registro2Activity">
         </activity>
         <activity android:name=".UbicacionActivity">
