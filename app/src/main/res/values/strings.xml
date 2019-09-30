@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MoveApp</string>
+    <string name="ingresa_correo">Ingresa tu correo</string>
+    <string name="ingreso_contraseña">Ingresa tu contraseña</string>
+    <string name="bn_iniciar_sesion">Iniciar sesión</string>
+    <string name="registrate">¿Aun no te has registrado?</string>
+    <string name="registro">Registrate!!</string>
+    <string name="app_registro">Registro</string>
+    <string name="registro_tel_uno">Para empezar registra</string>
+    <string name="registro_tel_dos">tu número de teléfono</string>
+    <string name="numero_tel">300 XXX XXXX</string>
+    <string name="verificar">Verificar</string>
+    <string name="codigo_verifi">A continuación recibira un código de verificación.</string>
+    <string name="Ing_codigo_ver">Ingrese código de verificación</string>
+    <string name="Ingresar">Ingresar</string>
+    <string name="debes_activar">Debes activar tu ubicación</string>
+    <string name="debes_activar_dos">para el correcto funcionamiento</string>
+    <string name="debes_activar_tres">de la aplicación</string>
+    <string name="registro_datos">Bienvenido a MoveApp!</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Correo">Correo</string>
+    <string name="Apellido">Apellido</string>
+    <string name="Ciudad">Ciudad</string>
+</resources>

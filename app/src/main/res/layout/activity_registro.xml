@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistroActivity"
+        android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/registro_tel_uno"
+                  android:gravity="center"
+                  android:paddingTop="50dp"
+                  android:textSize="20dp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/registro_tel_dos"
+                  android:gravity="center"
+                  android:textSize="20dp"
+                  android:textStyle="bold"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="50dp"
+                  android:orientation="horizontal"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="35dp">
+
+        <ImageView android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:src="@drawable/telefono"/>
+
+        <EditText android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:inputType="phone"
+                  android:id="@+id/etPhone"
+                  android:hint="@string/numero_tel"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="30dp"
+                  android:gravity="center"
+                  android:orientation="vertical">
+
+        <Button android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:id="@+id/bnTelefono"
+                android:background="@drawable/button_animation"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/color_azulOscuro"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:text="@string/Ingresar"
+        />
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="30dp"
+                  android:text="@string/codigo_verifi"
+                  android:gravity="center"/>
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/etVerificar"
+                  android:paddingTop="30dp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"
+                  android:hint="@string/Ing_codigo_ver"
+                  android:gravity="center"
+                  android:inputType="number"/>
+
+        <Button android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:id="@+id/bnVerificar"
+                android:background="@drawable/button_animation"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/color_azulOscuro"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:text="@string/verificar"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>
