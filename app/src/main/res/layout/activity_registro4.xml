@@ -30,46 +30,53 @@
                   android:layout_marginRight="30dp"
                   android:orientation="horizontal">
 
-        <ImageView android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                    android:src="@drawable/cliente"/>
-        <TextView android:layout_width="0dp"
-                  android:layout_height="wrap_content"
+        <GridLayout android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dp"
+                    android:orientation="vertical">
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/cliente"
+                       android:paddingEnd="10dp"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/conductor"
+            android:paddingTop="10dp"/>
+        </GridLayout>
+
+      <GridLayout android:layout_width="0dp"
+                  android:layout_height="150dp"
                   android:layout_weight="1.5"
-                  android:text="@string/cliente"
-                  android:textSize="20dp"
-                  android:gravity="center"/>
+                  android:orientation="vertical">
 
-        <RadioButton android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="center"/>
+          <RadioGroup android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layoutDirection="rtl">
 
-    </LinearLayout>
+          <RadioButton android:layout_width="wrap_content"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       android:layout_gravity="left"
+                       android:text="@string/Usuario"
+                       android:textSize="20dp"
+                       android:id="@+id/bnUsuario"
+          />
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:paddingTop="80dp"
-                  android:layout_marginLeft="30dp"
-                  android:layout_marginRight="30dp"
-                  android:orientation="horizontal">
+          <RadioButton android:layout_width="wrap_content"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       android:gravity="center"
+                       android:layout_gravity="left"
+                       android:text="@string/conductor"
+                       android:textSize="20dp"
+                       android:id="@+id/bnConductor"/>
 
-        <ImageView android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:src="@drawable/conductor"/>
-        <TextView android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:layout_weight="1.5"
-                  android:text="@string/conductor"
-                  android:textSize="20dp"
-                  android:gravity="center"/>
+          </RadioGroup>
+      </GridLayout>
 
-        <RadioButton android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="center"/>
 
     </LinearLayout>
 

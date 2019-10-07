@@ -10,8 +10,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".NavigationActivity"
-                android:label="@string/title_activity_navigation"
+                android:name=".NavDrawerActivity"
+                android:label="@string/title_activity_nav_drawer"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".Registro4Activity">

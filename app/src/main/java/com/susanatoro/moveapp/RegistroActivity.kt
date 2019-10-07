@@ -24,7 +24,7 @@ class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-        auth = FirebaseAuth.getInstance()
+        /*auth = FirebaseAuth.getInstance()
         auth.setLanguageCode("fr")
 
         bnTelefono.setOnClickListener {
@@ -86,7 +86,7 @@ class RegistroActivity : AppCompatActivity() {
             }
 
         }
-
+        */
 
 
 
@@ -107,7 +107,7 @@ class RegistroActivity : AppCompatActivity() {
         }
     }
 
-    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+    /*private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -136,6 +136,7 @@ class RegistroActivity : AppCompatActivity() {
         private const val STATE_SIGNIN_FAILED = 5
         private const val STATE_SIGNIN_SUCCESS = 6
     }
+    */
 }
 
 
