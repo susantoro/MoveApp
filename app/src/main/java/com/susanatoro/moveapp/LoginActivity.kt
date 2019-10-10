@@ -12,7 +12,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         bnIniciarSesion.setOnClickListener {
-            //startActivity(Intent(this,DrawerActivity::class.java))
+            startActivity(Intent(this,NavegationDrawer::class.java))
+            finish()
         }
 
         tvRegistrar.setOnClickListener(){

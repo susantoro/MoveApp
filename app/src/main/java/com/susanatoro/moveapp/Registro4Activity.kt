@@ -18,8 +18,8 @@ class Registro4Activity : AppCompatActivity() {
 
             }
             if(bnUsuario.isChecked){
-                //startActivity(Intent(this,DrawerActivity::class.java))
-                //finish()
+                startActivity(Intent(this,NavegationDrawer::class.java))
+                finish()
             }
         }
     }

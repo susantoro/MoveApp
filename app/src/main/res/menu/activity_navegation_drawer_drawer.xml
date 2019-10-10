@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/perfil"
+                android:icon="@drawable/avatar"
+                android:title="@string/mi_perfil"/>
+        <item
+                android:id="@+id/servicio"
+                android:icon="@drawable/moving"
+                android:title="@string/mi_servicio"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                    android:id="@+id/salir"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/Salir"/>
+        </menu>
+    </item>
+
+</menu>
