@@ -23,7 +23,7 @@ class Registro2Activity : AppCompatActivity() {
     internal var titleList: List<String> ? = null
     private lateinit var Ciudades:ArrayList<String>
 
-    val data: HashMap<String, List<String>>
+    /*val data: HashMap<String, List<String>>
         get() {
             val listData = HashMap<String, List<String>>()
 
@@ -36,7 +36,7 @@ class Registro2Activity : AppCompatActivity() {
             listData["Ciudad"] = Ciudades
 
             return listData
-        }
+        }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,19 +55,22 @@ class Registro2Activity : AppCompatActivity() {
 
             if(name!="" && apellido!="" && email!="" && ciudad!="") { //foto opcional por el momento
 
-                /*val ref = FirebaseDatabase.getInstance().getReference("user")
-                val id = ref.push().key!!
-                val usuario = Usuario(id,name,apellido,email,ciudad,foto)
+                val ref = FirebaseDatabase.getInstance().getReference("usuario")
+                //ref.child("usuario").setValue(name)
 
-                ref.child(id).setValue(usuario)*/
+                //val ref2 = FirebaseDatabase.getInstance().getReference(name)
+                val usuario = Usuario(name,apellido,email,ciudad,foto)
+
+                ref.child(name).setValue(usuario)
 
                 /*val database = FirebaseDatabase.getInstance()
                 val myRef = database.getReference("message")
 
                 myRef.setValue("Hello, World!")*/
+                Toast.makeText(this,"pasando información a la base de datos",Toast.LENGTH_SHORT).show()
 
                 startActivity(Intent(this,Registro3Activity::class.java))
-                finish()
+                //finish()
             }else{
                 Toast.makeText(baseContext, "Falló la autenticación.",Toast.LENGTH_SHORT).show()
             }

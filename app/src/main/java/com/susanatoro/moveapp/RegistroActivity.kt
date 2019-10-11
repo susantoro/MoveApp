@@ -27,6 +27,7 @@ class RegistroActivity : AppCompatActivity() {
 
         bnTelefono.setOnClickListener {
             verificacion()
+            //startActivity(Intent(this,UbicacionActivity::class.java))
         }
 
 
@@ -105,6 +106,7 @@ class RegistroActivity : AppCompatActivity() {
             finish()
         }else{
             Toast.makeText(baseContext, "Falló la autenticación.",Toast.LENGTH_SHORT).show()
+
         }
     }
 
