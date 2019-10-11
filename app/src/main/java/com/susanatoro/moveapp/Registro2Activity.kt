@@ -3,27 +3,31 @@ package com.susanatoro.moveapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_registro2.*
-import kotlinx.android.synthetic.main.activity_registro3.*
+
 
 import java.util.ArrayList
 import java.util.HashMap
 
 class Registro2Activity : AppCompatActivity() {
 
+    private lateinit var auth:FirebaseAuth
+
     internal var expandableListView: ExpandableListView? = null
     internal var adapter: ExpandableListAdapter? = null
     internal var titleList: List<String> ? = null
+    private lateinit var Ciudades:ArrayList<String>
 
     val data: HashMap<String, List<String>>
         get() {
             val listData = HashMap<String, List<String>>()
 
-            val Ciudades = ArrayList<String>()
+            Ciudades = ArrayList<String>()
             Ciudades.add("Medellin")
             Ciudades.add("Bogota")
             Ciudades.add("Pereira")
@@ -38,12 +42,40 @@ class Registro2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro2)
 
+        auth = FirebaseAuth.getInstance()
+
+
         bnSiguiente.setOnClickListener{
-            startActivity(Intent(this,Registro3Activity::class.java))
-            finish()
+            var name=etUsername.text.toString()
+            var apellido=etUserlast.text.toString()
+            var email=etUseremail.text.toString()
+            var ciudad=etCiudad.text.toString()
+            var foto="urlDelaFoto"
+
+
+            if(name!="" && apellido!="" && email!="" && ciudad!="") { //foto opcional por el momento
+
+                /*val ref = FirebaseDatabase.getInstance().getReference("user")
+                val id = ref.push().key!!
+                val usuario = Usuario(id,name,apellido,email,ciudad,foto)
+
+                ref.child(id).setValue(usuario)*/
+
+                /*val database = FirebaseDatabase.getInstance()
+                val myRef = database.getReference("message")
+
+                myRef.setValue("Hello, World!")*/
+
+                startActivity(Intent(this,Registro3Activity::class.java))
+                finish()
+            }else{
+                Toast.makeText(baseContext, "Falló la autenticación.",Toast.LENGTH_SHORT).show()
+            }
 
         }
-        expandableListView = findViewById(R.id.elUsercity)
+
+
+        /*expandableListView = findViewById(R.id.elUsercity)
         if (expandableListView != null) {
             val listData = data
             titleList = ArrayList(listData.keys)
@@ -76,7 +108,7 @@ class Registro2Activity : AppCompatActivity() {
                 ).show()
                 false
             }
-        }
+        }*/
 
-        }
+    }
 }

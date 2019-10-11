@@ -38,12 +38,12 @@
 
             <ImageView android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/cliente"
+                       android:src="@drawable/usuario"
                        android:paddingEnd="10dp"/>
 
             <ImageView android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/conductor"
+                       android:src="@drawable/usuario"
             android:paddingTop="10dp"/>
         </GridLayout>
 
