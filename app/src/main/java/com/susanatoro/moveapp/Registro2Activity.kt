@@ -23,6 +23,8 @@ class Registro2Activity : AppCompatActivity() {
     internal var titleList: List<String> ? = null
     private lateinit var Ciudades:ArrayList<String>
 
+    private var cont=0
+
     /*val data: HashMap<String, List<String>>
         get() {
             val listData = HashMap<String, List<String>>()
@@ -54,14 +56,13 @@ class Registro2Activity : AppCompatActivity() {
 
 
             if(name!="" && apellido!="" && email!="" && ciudad!="") { //foto opcional por el momento
+                cont++
 
                 val ref = FirebaseDatabase.getInstance().getReference("usuario")
-                //ref.child("usuario").setValue(name)
 
-                //val ref2 = FirebaseDatabase.getInstance().getReference(name)
-                val usuario = Usuario(name,apellido,email,ciudad,foto)
+                val usuario = Usuario("usuario $cont",name,apellido,email,ciudad,foto)
 
-                ref.child(name).setValue(usuario)
+                ref.child("usuario $cont").setValue(usuario)
 
                 /*val database = FirebaseDatabase.getInstance()
                 val myRef = database.getReference("message")
@@ -69,7 +70,11 @@ class Registro2Activity : AppCompatActivity() {
                 myRef.setValue("Hello, World!")*/
                 Toast.makeText(this,"pasando información a la base de datos",Toast.LENGTH_SHORT).show()
 
-                startActivity(Intent(this,Registro3Activity::class.java))
+                val intent = Intent(this,Registro3Activity::class.java)
+                intent.putExtra("nombre",name)
+                intent.putExtra("correo",email)
+                intent.putExtra("cont",cont)
+                startActivity(intent)
                 //finish()
             }else{
                 Toast.makeText(baseContext, "Falló la autenticación.",Toast.LENGTH_SHORT).show()

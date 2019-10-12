@@ -27,7 +27,7 @@ class RegistroActivity : AppCompatActivity() {
 
         bnTelefono.setOnClickListener {
             verificacion()
-            //startActivity(Intent(this,UbicacionActivity::class.java))
+            startActivity(Intent(this,UbicacionActivity::class.java))
         }
 
 
@@ -100,7 +100,6 @@ class RegistroActivity : AppCompatActivity() {
     }
     private fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser!=null){
-
             startActivity(Intent(this,UbicacionActivity::class.java))
             Toast.makeText(baseContext, "Verificación de teléfono correcta!",Toast.LENGTH_SHORT).show()
             finish()
