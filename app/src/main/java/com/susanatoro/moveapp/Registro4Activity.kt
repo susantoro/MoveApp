@@ -13,12 +13,14 @@ class Registro4Activity : AppCompatActivity() {
 
         bnContinuar.setOnClickListener{
 
-            if(bnConductor.isChecked){
+            if(rbnConductor.isChecked){
 
 
             }
-            if(bnUsuario.isChecked){
+            if(rbnCliente.isChecked){
                 startActivity(Intent(this,NavegationDrawer::class.java))
+                //Se debe obtner un abandera para saber si eligió cliente o conductor y así procesar los datos
+                //correspondietnes para subirlos a la base de datos.
                 finish()
             }
         }

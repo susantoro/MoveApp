@@ -32,9 +32,6 @@ class Registro3Activity : AppCompatActivity() {
         tvNombre.text = "Bienvenido $nombre!"+"\n correo: $correo"+"\n cont=$cont"
 
         bnContinuar.setOnClickListener{
-            //var username: String
-            //var contrasenia:String
-            //var repiteContrasenia:String
 
              val username = etUsuario.text.toString()
              val contrasenia = etPass.text.toString()
@@ -48,19 +45,11 @@ class Registro3Activity : AppCompatActivity() {
                                 val user = auth.currentUser
                                 updateUI(user)
 
-                                Toast.makeText(
-                                    this,
-                                    "Te has registado con éxito!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                Toast.makeText(this, "Te has registado con éxito!", Toast.LENGTH_SHORT).show()
 
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(
-                                    this,
-                                    "El registro ha fallado. Intentalo de nuevo.",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                Toast.makeText(this, "El registro ha fallado. Intentalo de nuevo.", Toast.LENGTH_SHORT).show()
 
                             }
 

@@ -23,8 +23,6 @@ class Registro2Activity : AppCompatActivity() {
     internal var titleList: List<String> ? = null
     private lateinit var Ciudades:ArrayList<String>
 
-    private var cont=0
-
     /*val data: HashMap<String, List<String>>
         get() {
             val listData = HashMap<String, List<String>>()
@@ -56,13 +54,13 @@ class Registro2Activity : AppCompatActivity() {
 
 
             if(name!="" && apellido!="" && email!="" && ciudad!="") { //foto opcional por el momento
-                cont++
+
 
                 val ref = FirebaseDatabase.getInstance().getReference("usuario")
 
-                val usuario = Usuario("usuario $cont",name,apellido,email,ciudad,foto)
+                val usuario = Usuario("usuario",name,apellido,email,ciudad,foto)
 
-                ref.child("usuario $cont").setValue(usuario)
+                ref.child("usuario").setValue(usuario)
 
                 /*val database = FirebaseDatabase.getInstance()
                 val myRef = database.getReference("message")
@@ -73,7 +71,7 @@ class Registro2Activity : AppCompatActivity() {
                 val intent = Intent(this,Registro3Activity::class.java)
                 intent.putExtra("nombre",name)
                 intent.putExtra("correo",email)
-                intent.putExtra("cont",cont)
+
                 startActivity(intent)
                 //finish()
             }else{

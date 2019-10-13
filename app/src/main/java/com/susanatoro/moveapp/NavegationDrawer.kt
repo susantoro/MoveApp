@@ -1,6 +1,8 @@
 package com.susanatoro.moveapp
 
 import android.content.Intent
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -12,7 +14,10 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_miservicio.*
+import java.io.IOException
 
 class NavegationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -87,6 +92,8 @@ class NavegationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.servicio -> {
                 val miservicioFragment=MiservicioFragment()
                 transaction.replace(R.id.contenedor,miservicioFragment).commit()
+
+                Toast.makeText(this,"presionastes enviar",Toast.LENGTH_SHORT).show()
             }
 
             R.id.salir -> {
