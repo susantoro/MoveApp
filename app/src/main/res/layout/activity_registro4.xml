@@ -38,12 +38,12 @@
 
             <ImageView android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/cliente"
+                       android:src="@drawable/usuario"
                        android:paddingEnd="10dp"/>
 
             <ImageView android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/conductor"
+                       android:src="@drawable/usuario"
             android:paddingTop="10dp"/>
         </GridLayout>
 
@@ -60,9 +60,9 @@
                        android:layout_height="0dp"
                        android:layout_weight="1"
                        android:layout_gravity="left"
-                       android:text="@string/Usuario"
+                       android:text="@string/cliente"
                        android:textSize="20dp"
-                       android:id="@+id/bnUsuario"
+                       android:id="@+id/rbnCliente"
           />
 
           <RadioButton android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
                        android:layout_gravity="left"
                        android:text="@string/conductor"
                        android:textSize="20dp"
-                       android:id="@+id/bnConductor"/>
+                       android:id="@+id/rbnConductor"/>
 
           </RadioGroup>
       </GridLayout>

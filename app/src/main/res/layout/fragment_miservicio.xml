@@ -9,6 +9,44 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:text="@string/mi_servicio"
+            android:textColor="@color/color_negro"
+            android:fontFamily="cursive"
+            android:textSize="32sp"
+            android:textAlignment="center"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:padding="5dp"
+            android:layout_gravity="center">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textAlignment="center"
+                android:text="@string/ubicaci_n_de_salida_y_llegada_del_servicio"/>
+        <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/atOrigen"
+                android:textAlignment="center"
+                android:hint="@string/ingresa_tu_dirrecci_n_de_origen" />
+        <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/atDestino"
+                android:textAlignment="center"
+                android:hint="@string/ingresa_tu_direcci_n_de_destino" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bnEnviar"
+                android:layout_gravity="center"
+                android:text="Enviar"/>
+    </LinearLayout>
+
 
 </FrameLayout>

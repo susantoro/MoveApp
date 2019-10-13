@@ -105,13 +105,20 @@
                    android:scaleType="centerInside"
                    android:src="@drawable/cities"
                   />
+        <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:id="@+id/etCiudad"
+                android:hint="@string/Ciudad"
+                android:fontFamily="sans-serif"
+                android:inputType="textPersonName"/>
 
-        <ExpandableListView android:layout_width="0dp"
+        <!--<ExpandableListView android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.5"
                             android:id="@+id/elUsercity"
                             android:inputType="textPersonName"
-                            android:dividerHeight="0.5dp"/>
+                            android:dividerHeight="0.5dp"/>-->
 
     </LinearLayout>
 

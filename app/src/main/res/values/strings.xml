@@ -58,4 +58,8 @@
     <string name="menu_send">Send</string>
     <string name="title_activity_nav_drawer">NavDrawerActivity</string>
     <string name="title_activity_navegation_drawer">NavegationDrawer</string>
+    <string name="ingresa_tu_direcci_n_de_destino">Ingresa tu dirección de destino</string>
+    <string name="ingresa_tu_dirrecci_n_de_origen">Ingresa tu dirrección de origen</string>
+    <string name="ubicaci_n_de_salida_y_llegada_del_servicio">Ubicación de salida y llegada del servicio</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
