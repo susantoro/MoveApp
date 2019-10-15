@@ -1,18 +1,24 @@
 package com.susanatoro.moveapp
 
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_registro2.*
-
-
-import java.util.ArrayList
-import java.util.HashMap
+import java.util.*
 
 class Registro2Activity : AppCompatActivity() {
 
@@ -22,6 +28,11 @@ class Registro2Activity : AppCompatActivity() {
     internal var adapter: ExpandableListAdapter? = null
     internal var titleList: List<String> ? = null
     private lateinit var Ciudades:ArrayList<String>
+    private var foto=""
+    val REQUEST_IMAGE_CAPTURE = 1
+    val TOMAR_FOTO = 123
+    var fotoSeleccionadaUri:Uri? = null
+    var fotoURL="url foto"
 
     /*val data: HashMap<String, List<String>>
         get() {
@@ -50,15 +61,14 @@ class Registro2Activity : AppCompatActivity() {
             var apellido=etUserlast.text.toString()
             var email=etUseremail.text.toString()
             var ciudad=etCiudad.text.toString()
-            var foto="urlDelaFoto"
 
 
-            if(name!="" && apellido!="" && email!="" && ciudad!="") { //foto opcional por el momento
+            if(name!="" && apellido!="" && email!="" && ciudad!="" && fotoURL!="") { //foto opcional por el momento
 
 
                 val ref = FirebaseDatabase.getInstance().getReference("usuario")
 
-                val usuario = Usuario("usuario",name,apellido,email,ciudad,foto)
+                val usuario = Usuario("usuario",name,apellido,email,ciudad,fotoURL)
 
                 ref.child("usuario").setValue(usuario)
 
@@ -78,6 +88,13 @@ class Registro2Activity : AppCompatActivity() {
                 Toast.makeText(baseContext, "Falló la autenticación.",Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        iAgregarFoto.setOnClickListener {
+
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent,456)
         }
 
 
@@ -117,4 +134,45 @@ class Registro2Activity : AppCompatActivity() {
         }*/
 
     }
+
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode==456 && resultCode == Activity.RESULT_OK && data!=null){
+            Toast.makeText(this,"Foto seleccionada",Toast.LENGTH_SHORT).show()
+
+            fotoSeleccionadaUri = data.data
+            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver,fotoSeleccionadaUri)
+            val bitmaptDrawable = BitmapDrawable()
+            //iAgregarFoto.setBackgroundDrawable(bitmaptDrawable )
+            iAgregarFoto.setImageBitmap(bitmap)
+
+            tvAgregarGaleria.text = fotoSeleccionadaUri.toString()
+            fotoURL = fotoSeleccionadaUri.toString()
+            upLoadImageToFireBaseStorage()
+        }
+    }
+
+    private fun upLoadImageToFireBaseStorage(){
+        val filename = UUID.randomUUID().toString()
+        val ref = FirebaseStorage.getInstance().reference
+        ref.putFile(fotoSeleccionadaUri!!).addOnSuccessListener {
+
+            ref.downloadUrl.addOnSuccessListener {
+                fotoURL = it.toString()
+                Toast.makeText(this,"ubicación del archivo: ${it}",Toast.LENGTH_LONG).show()
+                //saveFotoToFireBaseDataBase()
+            }
+        }
+
+
+
+    }
+
+    private fun saveFotoToFireBaseDataBase() {
+
+    }
+
 }

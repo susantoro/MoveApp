@@ -27,7 +27,7 @@ class RegistroActivity : AppCompatActivity() {
 
         bnTelefono.setOnClickListener {
             verificacion()
-            startActivity(Intent(this,UbicacionActivity::class.java))
+            startActivity(Intent(this,UbicacionActivity::class.java)) // Quitar este start activity para recibir código
         }
 
 

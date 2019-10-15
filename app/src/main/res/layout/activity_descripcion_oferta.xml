@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".DescripcionOfertaActivity">
+
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/Nombre_conductor"
+              android:gravity="center"
+              android:paddingTop="50dp"
+              android:textSize="20dp"
+              android:textStyle="bold"/>
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="170dp"
+            android:layout_height="101dp"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:src="@drawable/girl"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:gravity="center">
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/star"
+                   android:paddingLeft="5dp"/>
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/star"
+                   android:paddingLeft="5dp"/>
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/star"
+                   android:paddingLeft="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="40dp"
+                  android:layout_marginLeft="30dp"
+                  android:orientation="vertical">
+
+        <GridLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/Vehículo"
+                      android:textSize="18dp"
+                      android:textStyle="bold"
+            />
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="10dp"
+                      android:textSize="18dp"
+                      android:text="@string/tipo_vehiculo"/>
+
+
+        </GridLayout>
+        <GridLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/placa"
+                      android:textSize="18dp"
+                      android:textStyle="bold"
+            />
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="10dp"
+                      android:textSize="18dp"
+                      android:text="@string/num_placa"/>
+
+        </GridLayout>
+        <GridLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/telefono"
+                      android:textSize="18dp"
+                      android:textStyle="bold"
+            />
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="10dp"
+                      android:textSize="18dp"
+                      android:text="@string/numero_tel"/>
+
+        </GridLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+            <ImageView android:layout_width="43dp"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:src="@drawable/dollar"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="18dp"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:text="@string/precio_oferta"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:paddingTop="40dp">
+
+            <Button android:layout_width="150dp"
+                    android:layout_height="75dp"
+                    android:id="@+id/bnContinuar"
+                    android:background="@drawable/button_animation"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/color_azulOscuro"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:text="@string/Aceptar">
+
+            </Button>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

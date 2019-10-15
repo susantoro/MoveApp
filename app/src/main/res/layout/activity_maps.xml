@@ -7,18 +7,6 @@
         android:orientation="vertical"
         tools:context=".MapsActivity">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvOrigen"
-            android:hint="@string/ingresa_tu_dirrecci_n_de_origen"
-            android:textAlignment="center"/>
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvDestino"
-            android:hint="@string/ingresa_tu_direcci_n_de_destino"
-            android:textAlignment="center"/>
 
     <TextView
             android:layout_width="match_parent"

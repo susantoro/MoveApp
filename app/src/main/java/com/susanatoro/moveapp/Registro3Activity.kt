@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.activity_registro3.*
 class Registro3Activity : AppCompatActivity() {
 
     private lateinit var auth:FirebaseAuth
-    private var cont:Int = 0
+    private var nombre = "susana"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,16 +23,17 @@ class Registro3Activity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val intent =intent
-        var nombre = intent.getStringExtra("nombre")!!
+
         var correo = intent.getStringExtra("correo")!!
-        cont = intent.getIntExtra("cont",0)
 
 
+        nombre = intent.getStringExtra("nombre")!!
 
 
-        tvNombre.text = "Bienvenido $nombre!"+"\n correo: $correo"+"\n cont=$cont"
+        tvNombre.text = "Bienvenido $nombre!"+"\n correo: $correo"
 
         bnContinuar.setOnClickListener{
+
 
              val username = etUsuario.text.toString()
              val contrasenia = etPass.text.toString()
@@ -67,7 +69,9 @@ class Registro3Activity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser!=null){
 
-            startActivity(Intent(this,Registro4Activity::class.java))
+            val intent = Intent(this,Registro4Activity::class.java)
+            intent.putExtra("nombre",nombre)
+            startActivity(intent)
             Toast.makeText(this,"Te has registado con éxito!",Toast.LENGTH_SHORT).show()
             finish()
         }else{

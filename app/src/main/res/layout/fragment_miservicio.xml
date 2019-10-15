@@ -24,6 +24,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/tvUbicacion"
                 android:textSize="32sp"
                 android:textAlignment="center"
                 android:text="@string/ubicaci_n_de_salida_y_llegada_del_servicio"/>

@@ -7,20 +7,24 @@ import kotlinx.android.synthetic.main.activity_registro4.*
 
 class Registro4Activity : AppCompatActivity() {
 
+    //private var nombre="susana"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro4)
 
         bnContinuar.setOnClickListener{
 
+            //nombre = intent.getStringExtra("nombre")!!
+
             if(rbnConductor.isChecked){
 
 
             }
             if(rbnCliente.isChecked){
-                startActivity(Intent(this,NavegationDrawer::class.java))
-                //Se debe obtner un abandera para saber si eligió cliente o conductor y así procesar los datos
-                //correspondietnes para subirlos a la base de datos.
+                val intent = Intent(this,DatosAutoActivity::class.java)
+                //intent.putExtra("nombre",nombre)
+                startActivity(intent)
                 finish()
             }
         }

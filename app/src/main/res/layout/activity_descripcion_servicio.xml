@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DescripcionServicioActivity">
+    <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/descripcion"
+              android:gravity="center"
+              android:paddingTop="60dp"
+              android:textSize="22dp"
+              android:textStyle="bold"/>
+
+    <TextView android:layout_width="343dp"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:paddingTop="20dp"
+              android:text="@string/descripcion_pregunta2"
+              android:textSize="20dp"
+              android:layout_gravity="center"
+              android:textStyle="bold"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingTop="30dp"
+                      android:orientation="vertical"
+                      android:paddingLeft="50dp">
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chArmario"
+                          android:layoutDirection="rtl"
+                          android:text="@string/armario" />
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chCama"
+                          android:layoutDirection="rtl"
+                          android:text="@string/Cama" />
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chComedor"
+                          android:layoutDirection="rtl"
+                          android:text="@string/Comedor"
+                          />
+
+            </GridLayout>
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chElectrodomesticos"
+                          android:layoutDirection="rtl"
+                          android:text="@string/electrodo"
+                          />
+            </GridLayout>
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chOficina"
+                          android:layoutDirection="rtl"
+                          android:text="@string/equiposoficina"
+                        />
+            </GridLayout>
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chMaquinariaPesada"
+                          android:layoutDirection="rtl"
+                          android:text="@string/maquinapesada"
+                         />
+            </GridLayout>
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                <CheckBox android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/chMaquinariaLiviana"
+                          android:layoutDirection="rtl"
+                          android:text="@string/maquinaliviana"
+                          />
+            </GridLayout>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/descripcion_pregunta3"
+                  android:gravity="left"
+                  android:paddingLeft="30dp"
+                  android:paddingTop="40dp"
+                  android:textSize="22dp"
+                  android:textStyle="bold"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingLeft="30dp">
+            <EditText android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/etDescripcion"
+                      android:inputType="textMultiLine"
+                      android:gravity="top"
+                      android:hint="@string/descripcion_write"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:paddingTop="40dp">
+
+            <Button android:layout_width="150dp"
+                    android:layout_height="75dp"
+                    android:id="@+id/bnContinuar"
+                    android:background="@drawable/button_animation"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/color_azulOscuro"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:text="@string/Siguiente">
+
+            </Button>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDescripcion"
+                android:layout_gravity="center"
+            android:text="descripcion"/>
+
+    </LinearLayout>
+
+</ScrollView>

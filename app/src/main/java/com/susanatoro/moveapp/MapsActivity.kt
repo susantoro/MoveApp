@@ -37,6 +37,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map_fragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 
     /**
@@ -54,14 +56,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         var direccionUbicacionOrigen = intent.getStringExtra("direccionOrigen")!!
         var direccionUbicacionDestino = intent.getStringExtra("direccionDestino")!!
 
-        tvOrigen.text = direccionUbicacionOrigen
-        tvDestino.text = direccionUbicacionDestino
 
         tvResult.text = "direcion origen: "+direccionUbicacionOrigen+"\ndireccion destino: "+direccionUbicacionDestino
 
         mMap = googleMap
         mMap.getUiSettings().setZoomControlsEnabled(true)
-        //setUpMapMiUbicacion()
+        setUpMapMiUbicacion()
 
         var geocoder = Geocoder(this)
         lateinit var listOrigen : MutableList<Address>
@@ -81,8 +81,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             var addressDestino = listDestino.get(0)
             var positionOrigen = LatLng(addressOrigen.latitude, addressOrigen.longitude)
             var positionDestino = LatLng(addressDestino.latitude, addressDestino.longitude)
-            var markerOrigen = MarkerOptions().title(direccionUbicacionOrigen).position(positionOrigen)
-            var markerDestino = MarkerOptions().title(direccionUbicacionDestino).position(positionDestino)
+            var markerOrigen = MarkerOptions().title(direccionUbicacionOrigen).position(positionOrigen).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+            var markerDestino = MarkerOptions().title(direccionUbicacionDestino).position(positionDestino).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
             mMap.addMarker(markerOrigen)
             mMap.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(positionOrigen, 15F)
@@ -109,7 +109,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
             return
         }
-        //mMap.isMyLocationEnabled = true
+        mMap.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
             if (location != null) {
                 lastLocation = location

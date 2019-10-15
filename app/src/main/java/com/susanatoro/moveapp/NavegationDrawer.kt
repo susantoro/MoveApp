@@ -22,12 +22,16 @@ import java.io.IOException
 class NavegationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var auth:FirebaseAuth
+    private var descripcion=""
+    private var tarifaUsuario=""
+    private var nombre="susana"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegation_drawer)
 
         auth = FirebaseAuth.getInstance()
+
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -46,11 +50,18 @@ class NavegationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSel
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
-        val manager = supportFragmentManager
-        val transaction = manager.beginTransaction()
 
-        val miservicioFragment=MiservicioFragment()
-        transaction.add(R.id.contenedor,miservicioFragment).commit()
+        val miServicioFragment = MiservicioFragment()
+        nombre = intent.getStringExtra("nombre")!! //Se necesita enviar al fragment de miServicio y completar para la base de datos
+
+        val args = Bundle()
+        args.putString("nombre",nombre)
+        miServicioFragment.arguments = args
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.contenedor, miServicioFragment)
+        transaction.commit()
+
     }
 
     override fun onBackPressed() {
@@ -87,10 +98,16 @@ class NavegationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSel
         when (item.itemId) {
             R.id.perfil -> {
                 val miperfilFragment=PerfilFragment()
+                val args = Bundle()
+                args.putString("nombre",nombre)
+                miperfilFragment.arguments = args
                 transaction.replace(R.id.contenedor,miperfilFragment).commit()
             }
             R.id.servicio -> {
                 val miservicioFragment=MiservicioFragment()
+                val args = Bundle()
+                args.putString("nombre",nombre)
+                miservicioFragment.arguments = args
                 transaction.replace(R.id.contenedor,miservicioFragment).commit()
 
                 Toast.makeText(this,"presionastes enviar",Toast.LENGTH_SHORT).show()
